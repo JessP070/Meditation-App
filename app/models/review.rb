@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
-  belongs_to :meditation
   belongs_to :user
+  belongs_to :meditation
+  
 end
