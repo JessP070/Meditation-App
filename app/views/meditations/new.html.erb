@@ -11,12 +11,23 @@
 </div>
 
 <p> Select a technique that already exists: </p>
+
 <div>
 <%= f.collection_select :technique_id, Technique.all, :id, :name %>
 </div>
 
 
 <p> Or create a new technique </p>
+
+<div>
+<%= f.fields_for :technique do |t| %>
+    <%= t.label :name %>
+    <%= t.text_field :name %>
+     <%= t.label :description %>
+    <%= t.text_field :description %>
+
+<% end %>
+</div>
 
 <%= f.submit %>
 <% end %>
