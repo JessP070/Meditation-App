@@ -1,0 +1,17 @@
+<h1>Create A New Meditation</h1>
+
+<%= form_for(@meditation) do |f|%>
+<div>
+<%= f.label :duration %>
+<%= f.text_field :duration %>
+</div>
+<div>
+<%= f.label :mood %>
+<%= f.text_field :mood %>
+</div>
+
+<p> Select a technique that already exists: </p>
+<p> Or create a new technique </p>
+
+<%= f.submit %>
+<% end %>
