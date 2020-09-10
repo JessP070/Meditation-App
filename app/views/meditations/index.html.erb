@@ -1,0 +1,8 @@
+<h1> All Meditations </h1>
+
+<% @meditations.each do |m| %>
+<h2><%= m.mood %> - <%= m.technique.name %> </h2>
+<div>
+<p><%= m. duration %></p>
+</div>
+<% end %>
