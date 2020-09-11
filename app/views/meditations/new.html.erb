@@ -13,7 +13,7 @@
 <p> Select a technique that already exists: </p>
 
 <div>
-<%= f.collection_select :technique_id, Technique.all, :id, :name %>
+<%= f.collection_select :technique_id, Technique.all, :id, :name, include_blank: 'Select One' %>
 </div>
 
 
@@ -28,6 +28,6 @@
 
 <% end %>
 </div>
-
+<br></br>
 <%= f.submit %>
 <% end %>
