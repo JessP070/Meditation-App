@@ -1,5 +1,8 @@
 <h3> Please Write A Review </h3>
 
+<%= render 'layouts/errors', locals: {object: @review} %>
+
+
 <%= form_for(@review) do |f|%>
   <% if params[:meditation_id] %>
     <%= f.hidden_field :meditation_id %>
