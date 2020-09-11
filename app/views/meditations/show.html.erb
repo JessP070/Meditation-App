@@ -1,0 +1,23 @@
+<h1> <%= @meditation.mood %>
+
+
+<strong>Duration: </strong>
+<%= @meditation.duration %>
+
+
+<p>
+<strong>Mood: </strong>
+<%= @meditation.mood %>
+</p>
+
+<p><strong>Technique Name:</strong><%= @meditation.technique.name %> </p>
+<p><strong>Technique Description:</strong><%= @meditation.technique.description %> </p>
+<br>
+<h4><%= link_to 'See All Reviews', meditation_reviews_path(@meditation)%></h4>
+<h4><%=link_to "Add A Review", new_meditation_review_path(@meditation)%> </h4>
+<br>
+<h4>By: <%=link_to @meditation.user.username, user_path(@meditation.user)%> </h4>
+
+ <br>
+<%= link_to 'Back', meditations_path %>
+
