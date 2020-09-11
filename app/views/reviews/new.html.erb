@@ -1,0 +1,29 @@
+<h3> Please Write A Review </h3>
+
+<%= form_for(@review) do |f|%>
+  <% if params[:meditation_id] %>
+    <%= f.hidden_field :meditation_id %>
+  <% else %>
+    <div>
+      <%= f.label :meditation_id, "Select a Technique" %>
+    <%= f.collection_select :technique_id, Technique.all, :id, :name, include_blank: 'Select One' %>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :stars %>
+    <%= f.number_field :stars %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+   <br>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+  
+  <br>
+  <%= f.submit %>
+<% end %>
