@@ -1,0 +1,17 @@
+
+
+<% if @meditation %>
+  <h1>Reviews for <%= @meditation.mood%> - <%= @meditation.technique_name %></h1>
+<% else %>
+  <h1>All the Reviews </h1>
+<% end %>
+
+<ul>
+<% @reviews.each do |review| %>
+
+  <li>
+    <%= @review.meditation.mood%>: <%= link_to @review.title, review_path(review)%> - <%= @review.stars%>
+  </li> <br>
+
+<% end %>
+</ul>
