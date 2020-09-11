@@ -13,6 +13,27 @@ class MeditationsController < ApplicationController
             render :new
         end
     end
+    
+    def index
+        @meditations = Meditation.all
+
+    end
+
+    def show
+        @meditation = Meditation.find_by_id(params[:id])
+    end
+
+    def edit
+
+    end
+
+    def update
+        
+    end
+
+    def destroy
+
+    end
 
     private
 
