@@ -1,5 +1,8 @@
 <h1>Create A New Meditation</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @meditation} %>
+
+
 <%= form_for(@meditation) do |f|%>
 <div>
 <%= f.label :duration %>
