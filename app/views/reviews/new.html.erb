@@ -1,6 +1,6 @@
-<h3> Please Write A Review </h3>
+<%=  display_header(@review)%>
 
-<%= render 'layouts/errors', locals: {object: @review} %>
+<%= render partial: 'layouts/errors', locals: {object: @review} %>
 
 
 <%= form_for(@review) do |f|%>
@@ -10,7 +10,7 @@
     <div>
       <%= f.label :meditation_id, "Select a Meditation" %>
       <br>
-    <%= f.collection_select :meditation_id, Meditation.all, :description, :mood, include_blank: 'Select One' %>
+    <%= f.collection_select :meditation_id, Meditation.all, :id, :mood_and_technique, include_blank: 'Select One' %>
     </div>
   <% end %>
   <div>
