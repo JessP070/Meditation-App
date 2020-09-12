@@ -9,8 +9,11 @@ class ReviewsController < ApplicationController
     end
 
     def new 
-        @meditation = Meditation.find_by_id(params[:meditation_id])
-        @review = @meditation.reviews.build
+        if params[:meditation_id] && @meditation = Meditation.find_by_id(params[:meditation_id])
+            @review = @meditation.reviews.build
+        else 
+            @review = Review.new
+        end
     end
 
     def create 
