@@ -15,7 +15,7 @@ class MeditationsController < ApplicationController
     end
     
     def index
-        @meditations = Meditation.all
+        @meditations = Meditation.order_by_rating
 
     end
 
