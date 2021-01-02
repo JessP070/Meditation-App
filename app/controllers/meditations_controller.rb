@@ -1,7 +1,10 @@
 class MeditationsController < ApplicationController
+
+    before_action :set_meditation, only: [:edit, :update, :destroy]
     def new
         @meditation = Meditation.new
         @meditation.build_technique
+
     end
 
     def create 
@@ -24,18 +27,30 @@ class MeditationsController < ApplicationController
     end
 
     def edit
-
+        @meditation = Meditation.find_by_id(params[:id])
     end
 
     def update
-        
+        @meditation = Meditation.find(params[:id])
+    
+        if @meditation.update(meditation_params)
+          redirect_to @meditation 
+        else 
+          render 'edit'
+        end 
     end
 
     def destroy
-
+        @meditation.destroy
+        redirect_to meditations_path
     end
 
     private
+
+    def set_meditation
+        @meditation = Meditation.find_by_id(params[:id])
+
+    end
 
     def meditation_params
         params.require(:meditation).permit(:mood, :duration, :technique_id, technique_attributes: [:name, :description])
