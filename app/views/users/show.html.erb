@@ -1,1 +1,9 @@
-Welcome, <%= @user.username %>! 
+<div class "title-container">
+<h1> Welcome <%= "#{@user.username}" %></h1> 
+</div><p><u>Created Meditations:</u></p>
+ <ol type =1 >
+  <% @user.meditations.each do |meditation|%>
+  <li> <%= link_to meditation.mood, meditation_path(meditation)%> - <%= meditation.technique.name %></li>
+  <% end %>
+  </ol>
+</div>
