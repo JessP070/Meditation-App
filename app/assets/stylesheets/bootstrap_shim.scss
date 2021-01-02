@@ -1,0 +1,90 @@
+$primary: hsl(182, 95%, 29%);
+@import "bootstrap";
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 580;
+    background-color: #EDE0F3;
+    margin: 0;
+    color: rgb(10, 10, 10);
+    line-height: 1.6;
+  }
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    h1 { 
+      margin: 0;
+    }
+    }
+    .meditations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-center;
+    }
+    .meditation {
+      width: 30%;
+      min-width: 300px;
+    }
+    .techniques {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-center;
+    }
+    .technique {
+      width: 30%;
+      min-width: 300px;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: rgb(115, 160, 165);
+      width: 100%;
+      display: flex;
+      position: static;
+      top: 0;
+      flex-wrap: wrap;
+      place-items: center;
+    }
+    .topnav a {
+      float: left;
+      display: block;
+      color: rgb(24, 23, 23);
+      padding: 15px 18px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .topnav a:hover {
+      background-color: rgb(245, 228, 244);
+      color: rgb(15, 11, 15);
+    }
+    .topnav a.active {
+      background-color: #99C49A;
+      color: white;
+      width: 100%;
+    }
+    .topnav .icon {
+      display: none;
+    }
+    .log-form {
+      display: flex;
+      flex-wrap: wrap;
+      place-items: center;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      min-width: 400px;
+      max-width: 475px;
+      background: rgb(247, 239, 239);
+      position: absolute;
+      top: 50%;
+      left: 50%; 
+      padding: 3rem;
+      transform: translate(-50%, -50%);
+      width: 50rem;
+      box-sizing: border-box;
+      border: 1px solid #DADCE0;
+      border-radius: 11px;  
+      border-width: 100%;
+      }
