@@ -1,9 +1,16 @@
+
+<div class = "title-container"> 
 <h1> All Techniques </h1>
-
-<ol>
+</div>
+<div class = "techniques">
+<ol type =1>
 <% @techniques.each do |technique| %>
-<li><%= technique.name %></li>
-<li><%= technique.description %></li>
+<div class = "technique">
 
+<li><spun style="color:blue;"><%= technique.name %></spun> - <%= technique.description %></li>
+<br>
+</div>
 <% end %>
+
 </ol>
+</div>
