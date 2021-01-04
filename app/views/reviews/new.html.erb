@@ -10,12 +10,12 @@
     <div>
       <%= f.label :meditation_id, "Select a Meditation" %>
       <br>
-    <%= f.collection_select :meditation_id, Meditation.alpha, :id, :mood_and_technique, include_blank: 'Select One' %>
+    <%= f.collection_select :meditation_id, Meditation.alpha, :id, :mood_and_technique, include_blank: true %>
     </div>
   <% end %>
   <div>
     <%= f.label :stars %>
-    <%= f.number_field :stars %>
+    <%= f.number_field :stars, min:0, max:5 %>
   </div>
   <br>
   <div>
@@ -25,9 +25,8 @@
    <br>
   <div>
     <%= f.label :content %>
-    <%= f.text_area :content, size: "30x4" %>
+    <%= f.text_area :content, size: "25x10" %>
   </div>
-  <%= f.hidden_field :meditation_id %>
   
   <%= f.submit %>
 <% end %>
