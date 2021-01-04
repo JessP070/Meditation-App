@@ -1,9 +1,14 @@
+<div class = "title-container"> 
 <h2> All Meditations </h2>
-
+</div>
+<div class = "meditations">
 <% @meditations.each do |m| %>
+<div class = "meditation">
 <h4> <%= link_to m.mood, meditation_path(m.id)%> - <%= m.technique.name %> </h4>
 <%= link_to "Write A Review", new_meditation_review_path(m.id) %>
 <div>
 <p><%= m. duration %></p>
 </div>
+</div>
 <% end %>
+</div>
