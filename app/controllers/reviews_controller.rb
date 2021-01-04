@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
 
     def index
-        if params[:meditation_id] && @meditation = Meditation.find_by_id(params[:meditation_id])
-            @reviews = @meditation.reviews.build
+        if @meditation = Meditation.find_by_id(params[:meditation_id])
+            @reviews = @meditation.reviews
         else 
             @reviews = Review.all
         end

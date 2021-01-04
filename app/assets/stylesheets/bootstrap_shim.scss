@@ -4,7 +4,7 @@ $primary: hsl(182, 95%, 29%);
 body {
     font-family: 'PT Sans', sans-serif;
     font-weight: 580;
-    background-color: #EDE0F3;
+    background-color: #ddf6f8;
     margin: 0;
     color: rgb(10, 10, 10);
     line-height: 1.6;
@@ -38,7 +38,7 @@ body {
     }
     .topnav {
       overflow: hidden;
-      background-color: rgb(115, 160, 165);
+      background-color: rgb(55, 138, 149);
       width: 100%;
       display: flex;
       position: static;
@@ -49,14 +49,14 @@ body {
     .topnav a {
       float: left;
       display: block;
-      color: rgb(24, 23, 23);
+      color: rgb(255, 255, 255);
       padding: 15px 18px;
       text-align: center;
       text-decoration: none;
       font-size: 20px;
     }
     .topnav a:hover {
-      background-color: rgb(245, 228, 244);
+      background-color: rgb(212, 233, 235);
       color: rgb(15, 11, 15);
     }
     .topnav a.active {
@@ -84,7 +84,7 @@ body {
       transform: translate(-50%, -50%);
       width: 50rem;
       box-sizing: border-box;
-      border: 1px solid #DADCE0;
+      border: 1px solid #000002;
       border-radius: 11px;  
       border-width: 100%;
       }
