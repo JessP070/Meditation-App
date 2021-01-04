@@ -1,5 +1,5 @@
 <% if @meditation %>
-  <h3>Reviews for <%= @meditation.mood%> - <%= @meditation.technique_id %></h3>
+  <h3>Reviews for <%= @meditation.mood%> - <%= @meditation.technique_name %> </h3>
 <% else %>
   <h1>All the Reviews </h1>
 <% end %>
@@ -8,7 +8,9 @@
 <% @reviews.each do |review| %>
 
   <li>
-    <%= review.meditation.mood%>: <%= link_to review.title, review_path(review)%> - <%= review.stars%>
+    <%= review.meditation.mood%>: <%= link_to review.title, review_path(review)%>
+    <br>
+   By: <%= review.user.username %>
   </li> <br>
 
 <% end %>
