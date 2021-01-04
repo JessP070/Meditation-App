@@ -1,14 +1,26 @@
-<h1>Login</h1>
 
-<p><%= flash[:error] %></p>
+
+<div class="totalbox">
+<div class="log-form">
+
+<h1>Login to your account</h1>
+
 
 <%= form_for(:user) do |f|%>
+<div class="form group">
 
 <%= f.label :username %>
 <%= f.text_field :username %>
+</div>
+<br>
+<div class="form group">
 
 <%= f.label :password %>
 <%= f.password_field :password %>
-
+</div>
+<br>
 <%= f.submit "Log In"%>
 <% end %>
+
+</div>
+</div>
