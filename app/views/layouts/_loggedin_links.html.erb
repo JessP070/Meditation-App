@@ -1,0 +1,13 @@
+<div class="topnav" id="myTopnav">
+
+
+<%= link_to "Home", user_path(current_user)%>
+<%= link_to "Add a Meditation", new_meditation_path %> |
+<%= link_to "All Meditations", meditations_path %> |
+<%= link_to "Add a Review", new_review_path %> |
+<%= link_to "All Reviews", reviews_path %> |
+<%= link_to "All Techniques", techniques_path %> |
+<%= link_to "Log Out", logout_path, method: :delete %> |
+
+
+</div>

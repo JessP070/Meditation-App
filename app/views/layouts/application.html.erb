@@ -10,16 +10,15 @@
   </head>
 
   <div>
-  <%= link_to "Log Out", logout_path, method: :delete %>
-  <%= link_to "Add Meditation", new_meditation_path %>
-  <%= link_to "All Meditations", meditations_path %>
-  <%= link_to "View All Techniques", techniques_path %>
-  <%= link_to "Add A Review", new_review_path %>
-  <%= link_to "All Reviews", reviews_path %>
+    <div><%= render_nav_bar %></div>
 
-
-
-
+    <section class="container"> 
+    <div id="flash">
+    <% flash.each do |key, value| %> 
+      <div class="flash alert <%= alert_class(key) %>"><%= value %></div>
+    <% end %>
+    </div>
+  </section>
 
   </div>
 
