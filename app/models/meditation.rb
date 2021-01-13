@@ -1,33 +1,28 @@
 class Meditation < ApplicationRecord
   belongs_to :technique
-  belongs_to :user
+  belongs_to :user #creator of it
   has_many :reviews
-  has_many :users, through: :reviews, :dependent => :destroy
-
-
+  has_many :users, through: :reviews, :dependent => :destroy 
+#have many users who have reviewed a specific meditation through reviews
   accepts_nested_attributes_for :technique
 
   validates :mood, presence: true
-  validate :not_a_duplicate
-
   scope :order_by_rating, -> {left_joins(:reviews).group(:id).order('avg(stars) desc')}
+  scope :starts_with, -> {where("mood LIKE ?", "A%")}
 
+  # def self.starts_with(a)
+  #   self.where("mood LIKE ?", "A%")
+  # end
 
   def self.alpha
     order(:mood)
   end
 
   def technique_attributes=(attributes)
-    self.technique = Technique.find_or_create_by(attributes) if !attributes['name'].empty?
-    self.technique
-  end
-
-
-  def not_a_duplicate
-    if Meditation.find_by(mood: mood, technique_id: technique_id)
-      errors.add(:mood, "Has already been added for that technique")
+      self.technique = Technique.find_or_create_by(attributes) if !attributes['name'].empty?
+      self.technique
     end
-  end
+
 
   def technique_name
   technique.try(:name)

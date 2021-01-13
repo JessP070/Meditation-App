@@ -1,9 +1,10 @@
 class User < ApplicationRecord
     has_many :reviews
     has_many :reviewed_meditations, through: :reviews, source: :meditation
+    #a user has many reviewed meditations---> and can create reviews on any meditation including their own
 
-    has_many :meditations
 
+    has_many :meditations #referring to a user who has created many meditations
 
     validates :username, uniqueness: true, presence: true
 

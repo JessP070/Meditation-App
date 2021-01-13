@@ -7,3 +7,11 @@
   <% end %>
   </ol>
 </div>
+
+</div><p><u>Reviewed Meditations:</u></p>
+<ol type =2 >
+  <% @user.reviewed_meditations.each do |meditation|%>
+  <li> <%= link_to meditation.mood, meditation_path(meditation)%> - <%= meditation.technique.name %></li>
+  <% end %>
+  </ol>
+</div>

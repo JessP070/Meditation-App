@@ -1,10 +1,11 @@
 class MeditationsController < ApplicationController
 
     before_action :set_meditation, only: [:edit, :update, :destroy]
+    before_action :redirect_if_not_logged_in
+
     def new
         @meditation = Meditation.new
         @meditation.build_technique
-
     end
 
     def create 
@@ -12,14 +13,19 @@ class MeditationsController < ApplicationController
         @meditation.user_id = session[:user_id]
         if @meditation.save
             redirect_to meditation_path(@meditation)
+
         else 
             render :new
         end
     end
     
     def index
-        @meditations = Meditation.order_by_rating
-
+        binding.pry
+        if params[:q]
+            @meditations = Meditation.starts_with
+        else
+            @meditations = Meditation.order_by_rating.alpha
+        end
     end
 
     def show
@@ -49,7 +55,6 @@ class MeditationsController < ApplicationController
 
     def set_meditation
         @meditation = Meditation.find_by_id(params[:id])
-
     end
 
     def meditation_params

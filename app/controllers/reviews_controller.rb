@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+    before_action :redirect_if_not_logged_in
+
     def index
         if @meditation = Meditation.find_by_id(params[:meditation_id])
             @reviews = @meditation.reviews
@@ -23,6 +25,7 @@ class ReviewsController < ApplicationController
         else 
             render :new
         end
+        
     end
 
     def show
